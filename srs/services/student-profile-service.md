@@ -1,2 +1,0 @@
-# Student Profile Service
-
