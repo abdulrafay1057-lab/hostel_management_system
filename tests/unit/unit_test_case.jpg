@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100" role="img" aria-labelledby="title desc">
+  <title id="title">Hostel Management System Unit Testing Diagram</title>
+  <desc id="desc">Unit test reports call five hostel management services in isolation, with mocked dependencies and shared assertions.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#52627a"/></marker>
+    <style>
+      text { font-family: Segoe UI, Arial, sans-serif; fill: #17243a; }
+      .title { font-size: 38px; font-weight: 700; }
+      .subtitle { font-size: 19px; fill: #58677c; }
+      .label { font-size: 20px; font-weight: 650; }
+      .small { font-size: 16px; fill: #52627a; }
+      .lane { fill: #f6f8fb; stroke: #dce3ed; stroke-width: 2; }
+      .report { fill: #eaf2ff; stroke: #5785cf; stroke-width: 2; }
+      .service { fill: #e9f7f0; stroke: #4f9c75; stroke-width: 2; }
+      .mock { fill: #fff4df; stroke: #d69a36; stroke-width: 2; }
+      .assert { fill: #f2ebff; stroke: #8a6cc2; stroke-width: 2; }
+      .line { fill: none; stroke: #52627a; stroke-width: 2.5; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="1600" height="1100" fill="#ffffff"/>
+  <text x="800" y="58" text-anchor="middle" class="title">Hostel Management System</text>
+  <text x="800" y="91" text-anchor="middle" class="subtitle">Unit test reports exercise one service at a time; external dependencies are mocked</text>
+
+  <rect x="65" y="126" width="1470" height="105" rx="18" class="assert"/>
+  <text x="800" y="169" text-anchor="middle" class="label">Unit Test Runner</text>
+  <text x="800" y="200" text-anchor="middle" class="small">Runs isolated test cases and records pass / fail results</text>
+
+  <path d="M800 231 V260 H150 V286 M800 260 H445 V286 M800 260 H740 V286 M800 260 H1035 V286 M800 260 H1330 V286" class="line"/>
+
+  <!-- Five test lanes -->
+  <g>
+    <rect x="45" y="286" width="270" height="680" rx="18" class="lane"/>
+    <rect x="340" y="286" width="270" height="680" rx="18" class="lane"/>
+    <rect x="635" y="286" width="270" height="680" rx="18" class="lane"/>
+    <rect x="930" y="286" width="270" height="680" rx="18" class="lane"/>
+    <rect x="1225" y="286" width="330" height="680" rx="18" class="lane"/>
+  </g>
+  <g text-anchor="middle">
+    <rect x="60" y="304" width="240" height="104" rx="14" class="report"/>
+    <text x="180" y="342" class="label">HMS-UT-001 / 002</text><text x="180" y="374" class="small">Login validation</text>
+    <rect x="355" y="304" width="240" height="104" rx="14" class="report"/>
+    <text x="475" y="342" class="label">HMS-UT-003 / 004</text><text x="475" y="374" class="small">Application form</text>
+    <rect x="650" y="304" width="240" height="104" rx="14" class="report"/>
+    <text x="770" y="342" class="label">HMS-UT-005 / 006</text><text x="770" y="374" class="small">Bed availability</text>
+    <rect x="945" y="304" width="240" height="104" rx="14" class="report"/>
+    <text x="1065" y="342" class="label">HMS-UT-007 / 008</text><text x="1065" y="374" class="small">Complaint submission</text>
+    <rect x="1240" y="304" width="300" height="104" rx="14" class="report"/>
+    <text x="1390" y="342" class="label">HMS-UT-009 / 010</text><text x="1390" y="374" class="small">Payment status updates</text>
+  </g>
+  <g class="line">
+    <path d="M180 408 V477"/><path d="M475 408 V477"/><path d="M770 408 V477"/><path d="M1065 408 V477"/><path d="M1390 408 V477"/>
+  </g>
+  <g text-anchor="middle">
+    <rect x="70" y="478" width="220" height="112" rx="14" class="service"/>
+    <text x="180" y="520" class="label">Authentication</text><text x="180" y="552" class="small">service</text>
+    <rect x="365" y="478" width="220" height="112" rx="14" class="service"/>
+    <text x="475" y="520" class="label">Application</text><text x="475" y="552" class="small">service</text>
+    <rect x="660" y="478" width="220" height="112" rx="14" class="service"/>
+    <text x="770" y="520" class="label">Availability</text><text x="770" y="552" class="small">service</text>
+    <rect x="955" y="478" width="220" height="112" rx="14" class="service"/>
+    <text x="1065" y="520" class="label">Complaint</text><text x="1065" y="552" class="small">service</text>
+    <rect x="1265" y="478" width="250" height="112" rx="14" class="service"/>
+    <text x="1390" y="520" class="label">Payment status</text><text x="1390" y="552" class="small">service</text>
+  </g>
+  <g class="line">
+    <path d="M180 590 V663"/><path d="M475 590 V663"/><path d="M770 590 V663"/><path d="M1065 590 V663"/><path d="M1390 590 V645"/>
+  </g>
+  <g text-anchor="middle">
+    <rect x="65" y="664" width="230" height="112" rx="14" class="mock"/>
+    <text x="180" y="706" class="label">Mock user store</text><text x="180" y="738" class="small">+ password verifier</text>
+    <rect x="360" y="664" width="230" height="112" rx="14" class="mock"/>
+    <text x="475" y="706" class="label">Mock application</text><text x="475" y="738" class="small">repository</text>
+    <rect x="655" y="664" width="230" height="112" rx="14" class="mock"/>
+    <text x="770" y="706" class="label">Mock reservation</text><text x="770" y="738" class="small">repository</text>
+    <rect x="950" y="664" width="230" height="112" rx="14" class="mock"/>
+    <text x="1065" y="706" class="label">Mock complaint</text><text x="1065" y="738" class="small">repository</text>
+    <rect x="1240" y="645" width="300" height="88" rx="14" class="mock"/>
+    <text x="1390" y="681" class="label">Mock payment repository</text><text x="1390" y="709" class="small">load / save payment</text>
+    <rect x="1240" y="759" width="300" height="88" rx="14" class="mock"/>
+    <text x="1390" y="795" class="label">Mock event verifier</text><text x="1390" y="823" class="small">gateway signature</text>
+    <rect x="1240" y="873" width="300" height="70" rx="14" class="mock"/>
+    <text x="1390" y="916" class="label">Mock receipt notifier</text>
+  </g>
+  <path d="M1390 590 V633" class="line"/><path d="M1390 733 V754" class="line"/><path d="M1390 847 V868" class="line"/>
+
+  <rect x="65" y="830" width="1115" height="92" rx="16" class="assert"/>
+  <text x="622" y="868" text-anchor="middle" class="label">Assertions for every report</text>
+  <text x="622" y="898" text-anchor="middle" class="small">Check returned result, validation errors, saved state, and dependency calls</text>
+  <g class="line"><path d="M180 776 V813"/><path d="M475 776 V813"/><path d="M770 776 V813"/><path d="M1065 776 V813"/></g>
+  <text x="800" y="1030" text-anchor="middle" class="subtitle">No live database, hostel records, or payment gateway are used by these unit tests.</text>
+</svg>
