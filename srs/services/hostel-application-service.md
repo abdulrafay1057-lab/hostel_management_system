@@ -1,2 +1,0 @@
-# Hostel Application Service
-
